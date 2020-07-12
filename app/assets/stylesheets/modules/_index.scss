@@ -13,8 +13,11 @@
     justify-content: space-between;
   }
   .logo {
-    display: flex;
-    align-items: center;
+    &__link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
 
     &__img {
       width: 40px;

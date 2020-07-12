@@ -1,48 +1,68 @@
-// .top-name {
-//   width: 30%;
-//   margin: 0 auto;
-//   text-align: center;
-//   font-size: 5em;
-//   border-bottom: 1px solid rgba(26, 24, 24, 0.384);
-//   font-weight: 600;
-// }
-// .maker-contents {
-//   width: 100%;
-//   height: 100%;
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 40px 0;
-//   // .top-img {
-//   //   width: 42.2%;
-//   //   height: 100%;
-//   //   &__left {
-//   //     width: 400px;
-//   //     height: 400px;
-//   //   }
-//   // }
-//   .container {
-//     width: 50%;
-//     height: 100%;
-//     padding: 40px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     background-color: rgba(65, 61, 61, 0.24);
-//     border-radius: 10%;
-//   }
-//   .field {
-//     width: 100%;
-//     height: 100%;
-//     &__title {
-//       color: black;
-//       font-weight: bold;
-//       margin-bottom: 5px;
-//     }
-//     &__blanck {
-//       width: 100%;
-//     }
-//   }
-// }
+.top-name {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 5em;
+  border-bottom: 1px solid rgba(26, 24, 24, 0.384);
+  font-weight: 600;
+}
+.left {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form {
+  width: 100%;
+  height: 100%;
+}
+.fa {
+  font-size: 15px;
+}
+.filed {
+  &__title {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  &__input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    box-shadow: 4px 4px 2px 0px rgb(15, 12, 12);
+    margin-bottom: 20px;
+  }
+  &__btn {
+    margin-top: 32px;
+    padding: 10px 120px;
+    box-shadow: 4px 4px 2px 0px rgb(15, 12, 12);
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+    font-size: 20em;
+    transition: transform 0.5s;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: orange;
+      background-color: white;
+      transform: translate(5px, 5px);
+      box-shadow: none;
+    }
+  }
+}
