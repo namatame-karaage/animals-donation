@@ -14,24 +14,37 @@
   <header class="header">
     <div class="header__box">
       <div class="logo">
-        <%= image_tag 'washi-logo.jpg' ,class: "logo__img"%>
-        <span class="logo__animal">ANIMALS </span>
-        <span class="logo__domination">DOMINATION</span>
+        <%= link_to root_path , class: "logo__link" do %>
+          <%= image_tag 'washi-logo.jpg' ,class: "logo__img"%>
+          <span class="logo__animal">ANIMALS </span>
+          <span class="logo__domination">DOMINATION</span>
+        <% end %>
       </div>
       <% if user_signed_in? %>
         <div class="header__login">
-          <%= link_to "Myページ", user_path ,class: "btn__li "%>
-          <%= link_to "ログアウト", destroy_user_session_path ,class: "btn__li "%>
+          <%= link_to "Myページ", root_path ,class: "btn__li "%>
+          <%= link_to "ログアウト", destroy_user_session_path , method: :delete, class: "btn__li "%>
         </div>
       <% else %>
         <div class="header__login">
-          <%= link_to "寄付・入会する", new_user_registration_path ,class: "btn__li"%>
-          <%= link_to "図鑑", new_user_session_path ,class: "btn__li"%>
+          <%= link_to "寄付・入会する", new_user_registration_path , class: "btn__li"%>
+          <%= link_to "動物図鑑", "#" ,class: "btn__li"%>
           <%= link_to "ログインする", new_user_session_path ,class: "btn__li"%>
         </div>
       <% end %>
     </div>
   </header>
+  <% if flash[:notice]%>
+    <div class="notification is-info">
+      <p class="notice"><%= notice%></p>
+    </div>
+  <% end %>
+
+  <% if flash[:alert]%>
+    <div class="notification is-danger">
+      <p class="alert"><%= alert%></p>
+    </div>
+  <% end %>
 
     <%= yield %>
 
