@@ -1,0 +1,34 @@
+<main class="main">
+  <div class="top-page">
+    <%= image_tag 'top-bird.jpg', class: "top-page__img"%>
+    <h1 class="top-page__text">
+      <span class="top-page__text__doubutu">動物達</span>にご支援をお願いします<br>
+    <span class="top-page__text-inner">人類と生き物たちが共存・調和が<br>
+      取れる世界にしていきましょう</span>
+    </h1>
+</main>
+
+<h1 class="top-name">動物一覧</h1>
+
+
+<section class="message">
+  <div class="container">
+    <% @users.each do |user|%>
+      <div class="message__card">
+        <%= attachment_image_tag user, :profile_image, fallback: "no-image.png",class: "message__img" %>
+        <div class="message__box">
+          <div class="message__name">
+            <span class="message__name-sub">投稿者：</span>
+            <%= link_to user.name, user_path(user), class: "message__username" %>
+          </div>
+          <div class="message__text">
+            <p class="message__text-inner">
+              <%= user.profile%>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
