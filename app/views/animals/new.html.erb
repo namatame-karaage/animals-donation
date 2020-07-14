@@ -1,2 +1,24 @@
-<h1>Animals#new</h1>
-<p>Find me in app/views/animals/new.html.erb</p>
+<h1 class="top-name">投稿ページ</h1>
+<% if @animal.errors.any?%>
+  <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+  <ul>
+    <% @animal.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_with model: @animal do |f| %>
+<%= f.label :title%>
+<%= f.text_field :title%>
+
+<%= f.label :body%>
+<%= f.text_area :body%>
+
+<%= f.label :image%>
+<%= f.attachment_field :image%>
+
+<%= f.submit%>
+
+<% end %>
