@@ -10,4 +10,23 @@
 
 <%= link_to "編集する",edit_user_path(@user),class: ""%>
 <% end %>
-<%# <%= @user.profile%>
+
+<% @user.animals.each do |animal| %>
+  <%= attachment_image_tag animal , :image %>
+  <%= link_to  animal_path(animal) do %>
+    <i class="fas fa-book">動物詳細
+  <% end %>
+<% if @user.id == current_user.id %>
+  <%= link_to edit_animal_path(animal) do %>
+    <i class="fas fa-edit">メッセージ編集
+  <% end %>
+  <%= link_to animal_path(animal),data: { confirm: "本当に削除しますか？"}, method: :delete  do %>
+    <i class="fas fa-trash">削除
+  <% end %>
+<% end %>
+  <%= animal.updated_at.strftime("%Y-%m-%d %H:%M")%>
+<% end %>
+
+
+
+

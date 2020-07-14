@@ -1,2 +1,16 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<%= attachment_image_tag @animal, :image%>
+
+<%= @animal.title%>
+<%= simple_format @animal.body%>
+
+<% if @animal.user.id == current_user.id %>
+  <%= link_to "編集", edit_animal_path(@animal)%>
+<% end %>
+
+<%= @animal.user.name%>
+<%= @animal.user.profile%>
+<%= link_to user_path(@animal.user) do%>
+　<%= @animal.user.name %>さんのページへ
+<% end %>
+
+
