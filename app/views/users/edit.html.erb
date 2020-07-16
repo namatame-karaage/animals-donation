@@ -1,7 +1,5 @@
  <h1 class="top-name">編集ページ</h1>
-  <%# <div class="top-img">
-    <%= image_tag 'hawk.jpg' ,class: "top-img__left" %>
-  <%# </div> %>
+
 
 <section class="section">
   <div class="container">
@@ -19,13 +17,13 @@
       </div>
 
       <div class="field">
-        <%# <i class="fas fa fa-envelope"></i> %>
+        <i class="fas fa fa-id-card"></i>
         <%= f.label :profile , "プロフィール",class: "filed__title"%><br />
         <%= f.text_area :profile,:placeholder=> "profile",class: "filed__area" %>
       </div>
 
       <div class="field">
-        <%# <i class="fas fa fa-envelope"></i> %>
+        <i class="fas fa fa-id-card"></i>
         <%= f.label :profile_image , "プロフィール画像",class: "filed__title"%><br />
         <%= f.attachment_field :profile_image ,class: "filed__input" %>
       </div>

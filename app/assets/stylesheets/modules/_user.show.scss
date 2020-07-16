@@ -1,0 +1,198 @@
+.top {
+  margin-top: 40px;
+}
+.message {
+  padding: 100px 0 80px 0;
+  margin-top: 30px;
+
+  .container {
+    max-width: 1070px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__box {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+    background-color: rgba(245, 244, 244, 0.89);
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+  &__img {
+    width: 25%;
+    height: 120px;
+    border-radius: 45%;
+    background-size: 100%;
+    padding: 10px;
+  }
+
+  &__name {
+    margin: 30px 20px;
+    line-height: 30px;
+  }
+  &__name-sub {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &__username {
+    font-size: 15px;
+    text-decoration: none;
+    color: orange;
+    font-weight: bold;
+  }
+  &__text-inner {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+}
+
+.show {
+  width: 100%;
+  height: 100%;
+  &__inner {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__box {
+    margin-top: 10px;
+    width: 70%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__img {
+    width: 45%;
+  }
+  &__name {
+    font-size: 20px;
+    text-decoration: none;
+    color: orange;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  &__shyoukai {
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  &__email {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  &__profile {
+    font-size: 22px;
+  }
+  .top {
+    margin-top: 10px;
+  }
+  &__mypage {
+    margin-top: 20px;
+    padding-right: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: orange;
+    font-size: 20px;
+    border-bottom: 1px solid skyblue;
+    transition: all 0.4s;
+
+    &:hover {
+      color: black;
+      background-color: orange;
+      border: 1px solid orange;
+      border-radius: 20%;
+    }
+  }
+  &__edit {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border: 1px solid orange;
+    background-color: orange;
+    margin-right: 40px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      letter-spacing: 5px;
+      background-color: white;
+      color: orange;
+    }
+  }
+}
+
+.usershow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  &__container {
+    width: 70%;
+    height: 10%;
+    padding: 60px;
+    margin: 0 auto;
+    background-color: papayawhip;
+  }
+  &__img-size {
+    width: 30px;
+    height: 20px;
+  }
+}
+.none {
+  text-decoration: none;
+}
+.btn-orange {
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 20px;
+  color: white;
+  border: 1px solid orange;
+  background-color: orange;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.3s;
+
+  &:hover {
+    letter-spacing: 3px;
+    background-color: white;
+    color: orange;
+  }
+}
+.btn-black {
+  padding: 10px;
+  margin-right: 20px;
+  color: black;
+  border: 1px solid white;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.3s;
+
+  &:hover {
+    letter-spacing: 3px;
+    background-color: balck;
+    color: tomato;
+  }
+}

@@ -8,17 +8,24 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form"}) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
+        <div class="background">
+          <div class="circle"></div>
+          <div class="circle__two"></div>
+          <div class="circle__three"></div>
+        </div>
         <div class="field">
           <i class="fas fa fa-user"></i>
           <%= f.label :name ,class: "filed__title"%><br />
-          <%= f.text_field :name, autofocus: true, autocomplete: "email",:placeholder=> "name" ,class: "filed__input"%>
+          <%= f.text_field :name, autofocus: true, autocomplete: "email",:placeholder=> "お名前" ,class: "filed__input"%>
         </div>
 
         <div class="field">
           <i class="fas fa fa-envelope"></i>
           <%= f.label :email ,class: "filed__title"%><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder=> "mail",class: "filed__input" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder=> "メールアドレス",class: "filed__input" %>
         </div>
+
+
 
         <div class="field">
            <i class="fas fa fa-lock"></i>
@@ -26,13 +33,13 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password",:placeholder=> "password",class: "filed__input" %>
+          <%= f.password_field :password, autocomplete: "new-password",:placeholder=> "パスワード",class: "filed__input" %>
         </div>
 
         <div class="field">
            <i class="fas fa fa-lock"></i>
           <%= f.label :password_confirmation ,class: "filed__title"%><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",:placeholder=> "password",class: "filed__input" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",:placeholder=> "パスワード確認",class: "filed__input" %>
         </div>
 
         <div class="actions">

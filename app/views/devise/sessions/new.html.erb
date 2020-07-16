@@ -1,20 +1,19 @@
 <h1 class="top-name">ログインページ</h1>
-<div class="left">
-  <%= render "devise/shared/links" , class: "left__btn"%>
-</div>
+
+  <%= render "devise/shared/links"%>
 <section class="section">
   <div class="container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <i class="fas fa fa-envelope"></i>
         <%= f.label :email ,class: "filed__title"%><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder=> "mail",class: "filed__input" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder=> "メールアドレス",class: "filed__input" %>
       </div>
 
       <div class="field">
         <i class="fas fa fa-lock"></i>
         <%= f.label :password ,class: "filed__title"%><br />
-        <%= f.password_field :password, autocomplete: "current-password",:placeholder=> "password",class: "filed__input" %>
+        <%= f.password_field :password, autocomplete: "current-password",:placeholder=> "パスワード",class: "filed__input" %>
       </div>
 
       <% if devise_mapping.rememberable? %>

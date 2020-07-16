@@ -23,9 +23,9 @@
       <% if user_signed_in? %>
         <div class="header__login">
           <%= link_to "動物図鑑", animals_path ,class: "btn__li"%>
-          <%= link_to "ユーザー一覧", users_path ,class: "btn__li "%>
+          <%= link_to "ユーザー", users_path ,class: "btn__li "%>
           <%= link_to "MYページ", user_path(current_user) ,class: "btn__li "%>
-          <%= link_to "メッセージを送る", new_animal_path,class: "btn__li "%>
+          <%= link_to "投稿", new_animal_path,class: "btn__li "%>
           <%= link_to "ログアウト", destroy_user_session_path , method: :delete, class: "btn__li "%>
         </div>
       <% else %>
@@ -50,6 +50,7 @@
   <% end %>
 
     <%= yield %>
+
 
   <footer class="footer">@AnimalsDonation  2020</footer>
 

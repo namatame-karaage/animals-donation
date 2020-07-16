@@ -1,7 +1,9 @@
-@import "reset";
+@import "modules/reset";
 @import "modules/index";
 @import "modules/sign.login.edit";
 @import "modules/flash";
+@import "modules/user.show";
+@import "modules/message.index";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap");

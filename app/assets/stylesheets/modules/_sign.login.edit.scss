@@ -32,9 +32,10 @@
   &__title {
     display: inline-block;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    letter-spacing: 4px;
   }
   &__input {
     width: 100%;
@@ -58,6 +59,7 @@
     letter-spacing: 2px;
   }
   &__btn {
+    width: 100%;
     margin-top: 32px;
     padding: 10px 120px;
     box-shadow: 4px 4px 2px 0px rgb(15, 12, 12);
@@ -76,5 +78,27 @@
       transform: translate(5px, 5px);
       box-shadow: none;
     }
+  }
+}
+.body {
+  height: 100%;
+}
+.edit-animal {
+  width: 100%;
+  text-decoration: none;
+  padding: 10px;
+  margin: 40px 0;
+  color: white;
+  font-size: 18px;
+  border: 1px solid orange;
+  background-color: orange;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover {
+    letter-spacing: 5px;
+    background-color: white;
+    color: orange;
   }
 }

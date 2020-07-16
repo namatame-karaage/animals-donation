@@ -8,17 +8,33 @@
   </ul>
 <% end %>
 
+<section class="section">
+  <div class="container">
+    <div class="form">
+      <%= form_with model: @animal do |f| %>
 
-<%= form_with model: @animal do |f| %>
-<%= f.label :title%>
-<%= f.text_field :title%>
+      <div class="field">
+        <i class="fab fa fa-battle-net"></i>
+        <%= f.label :title, class: "filed__title"%>
+        <%= f.text_field :title, class: "filed__input"%>
+      </div>
 
-<%= f.label :body%>
-<%= f.text_area :body%>
+      <div class="field">
+        <i class="fas fa fa-shoe-prints"></i>
+        <%= f.label :body, class: "filed__title"%>
+        <%= f.text_area :body, class: "filed__input body"%>
+      </div>
 
-<%= f.label :image%>
-<%= f.attachment_field :image%>
+      <div class="field">
+        <i class="fas fa fa-camera-retro"></i>
+        <%= f.label :image, class: "filed__title"%>
+        <%= f.attachment_field :image, class: "filed__input"%>
+      </div>
 
-<%= f.submit%>
-
-<% end %>
+      <div class="actions">
+        <%= f.submit "投稿する" ,class: "filed__btn"%>
+      </div>
+      <% end %>
+  </div>
+ </div>
+</section>

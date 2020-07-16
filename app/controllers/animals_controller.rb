@@ -17,7 +17,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
     @animal.user_id = current_user.id
     if @animal.save
-      redirect_to animal_path(@animal) , notice: '投稿に成功'
+      redirect_to animal_path(@animal) , notice: "#{@animal.title}の投稿に成功しました！"
     else
       render :new
     end
@@ -39,11 +39,12 @@ class AnimalsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @animal = Animal.find(params[:id])
     @animal.destroy
-    redirect_to animals_path
+    redirect_to user_path
   end
+
   private
   def animal_params
     params.require(:animal).permit(:title, :body, :image)

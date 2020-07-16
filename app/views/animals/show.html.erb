@@ -1,16 +1,24 @@
-<%= attachment_image_tag @animal, :image%>
+<div class="show">
+  <div class="show__inner">
+    <div class="show__card">
+      <%= attachment_image_tag @animal, :image,class: "message__img show__img"%>
+      <div class="show__box">
+        <span class="show__name">
+          <%= @animal.title%>
+        </span>
+        <span class="show__shyoukai">~紹介文~
+        </span>
+        <span class="show__profile">
+          <%= simple_format @animal.body%>
+        </span>
+        <% if @animal.user.id == current_user.id %>
+          <%= link_to "編集する", edit_animal_path(@animal),class: "btn-orange top"%>
+        <% end %>
 
-<%= @animal.title%>
-<%= simple_format @animal.body%>
-
-<% if @animal.user.id == current_user.id %>
-  <%= link_to "編集", edit_animal_path(@animal)%>
-<% end %>
-
-<%= @animal.user.name%>
-<%= @animal.user.profile%>
-<%= link_to user_path(@animal.user) do%>
-　<%= @animal.user.name %>さんのページへ
-<% end %>
-
+        <%= link_to user_path(@animal.user), class: "show__mypage" do%>
+        　<%= @animal.user.name %>さんのページへ
+        <% end %>
+    </div>
+  </div>
+</div>
 

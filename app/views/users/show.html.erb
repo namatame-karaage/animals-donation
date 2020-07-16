@@ -1,32 +1,53 @@
 <h1 class="top-name">ユーザー情報</h1>
 
-<%= attachment_image_tag @user, :profile_image, fallback: "no-image.png",class: "message__img" %>
+<div class="show">
+  <div class="show__inner">
+    <div class="show__card">
+        <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png",class: "message__img show__img" %>
+      <div class="show__box">
+        <span class="show__name">名前:
+          <%= @user.name %>
+        </span>
+        <span class="show__shyoukai">~紹介文~
+        </span>
+        <span class="show__profile">
+          <%= @user.profile%>
+        </span>
+        <% if @user.id == current_user.id%>
+        <span class="show__email"> Email:
+          <%= @user.email %>
+        </span>
 
-<%= @user.name %>
-<%= @user.profile%>
-<% if @user.id == current_user.id%>
-<%= @user.email %>
+        <%= link_to "編集する",edit_user_path(@user),class: "show__edit"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-<%= link_to "編集する",edit_user_path(@user),class: ""%>
-<% end %>
-
-<% @user.animals.each do |animal| %>
-  <%= attachment_image_tag animal , :image %>
-  <%= link_to  animal_path(animal) do %>
-    <i class="fas fa-book">動物詳細
-  <% end %>
-<% if @user.id == current_user.id %>
-  <%= link_to edit_animal_path(animal) do %>
-    <i class="fas fa-edit">メッセージ編集
-  <% end %>
-  <%= link_to animal_path(animal),data: { confirm: "本当に削除しますか？"}, method: :delete  do %>
-    <i class="fas fa-trash">削除
-  <% end %>
-<% end %>
-  <%= animal.updated_at.strftime("%Y-%m-%d %H:%M")%>
-<% end %>
-
+<div class= "usershow">
+  <div class= "usershow__container">
+    <% @user.animals.each do |animal| %>
+      <%= attachment_image_tag animal , :image , class: "usershow__img-size"%>
+      <%= link_to  animal_path(animal) , class: "none" do %>
+        <i class="fas fa-book btn-orange">詳しく見る</i>
+      <% end %>
+    <% if @user.id == current_user.id %>
+      <%= link_to edit_animal_path(animal),class: "none" do %>
+        <i class="fas fa-edit btn-orange">メッセージ編集</i>
+      <% end %>
+      <%= link_to animal_path(animal),data: { confirm: "本当に削除しますか？"}, method: :delete, class: "none"  do %>
+        <i class="fas fa-trash btn-black">
+        削除
+        </i>
+      <% end %>
+    <% end %>
+    <span class="font">
+      <%= animal.updated_at.strftime("%Y-%m-%d %H:%M") %>
+    </span>
+    <% end %>
+  </div>
+</div>
 
 
 

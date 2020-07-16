@@ -1,25 +1,31 @@
-<% if @user.errors.any?%>
-  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message|%>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 
-<%= form_with model: @animal do |f| %>
+<section class="section">
+  <div class="container">
+    <div class="form">
+      <%= form_with model: @animal do |f| %>
 
-<%= f.label :title%>
-<%= f.text_field :title%>
+      <div class="field">
+        <i class="fab fa fa-battle-net"></i>
+        <%= f.label :title, class: "filed__title"%>
+        <%= f.text_field :title, class: "filed__input"%>
+      </div>
 
-<%= f.label :body%>
-<%= f.text_area :body%>
+      <div class="field">
+        <i class="fas fa fa-shoe-prints"></i>
+        <%= f.label :body , class: "filed__title"%>
+        <%= f.text_area :body, class: "filed__input"%>
+      </div>
 
-<%= f.label :body%>
-<%= f.attachment_field :image%>
+      <div class="field">
+        <i class="fas fa fa-camera-retro"></i>
+        <%= f.label :image, class: "filed__title"%>
+        <%= f.attachment_field :image, class: "filed__input"%>
+      </div>
 
-<%= f.submit "更新"%>
-
-
-
-<% end %>
+      <div class="actions">
+        <%= f.submit "更新する",class: "edit-animal"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
