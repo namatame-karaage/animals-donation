@@ -1,18 +1,15 @@
 <h1 class="top-name">入会ページ</h1>
-  <%# <div class="top-img">
-    <%= image_tag 'hawk.jpg' ,class: "top-img__left" %>
-  <%# </div> %>
+<div class="background">
+  <div class="circle"></div>
+  <div class="circle__two"></div>
+  <div class="circle__three"></div>
+</div>
 
 <section class="section">
   <div class="container">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form"}) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="background">
-          <div class="circle"></div>
-          <div class="circle__two"></div>
-          <div class="circle__three"></div>
-        </div>
         <div class="field">
           <i class="fas fa fa-user"></i>
           <%= f.label :name ,class: "filed__title"%><br />
